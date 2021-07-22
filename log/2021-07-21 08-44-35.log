@@ -1,0 +1,56 @@
+Fetching market data @ 2021-07-21T03:44:38-05:00 ...
+
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+Order taker asset remaining: 18.383038282766248568
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+Order taker asset remaining: 131.586715500532939247
+Order taker asset remaining: 3411.532065033257890974
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+{
+	"signature":"0x1bdb01b456fb541bd472ec6c52163a0e4472d41329e8f7eb4ce619655b036366a8665511910e55a5db04649442b9cc6ab5b6a506a46f1d4f567bca01c6ae04d59e03",
+	"senderAddress":"0x0000000000000000000000000000000000000000",
+	"makerAddress":"0x2845809b4ec0d747655a5f28077e804e186a903d",
+	"takerAddress":"0x0000000000000000000000000000000000000000",
+	"makerFee":"0",
+	"takerFee":"0",
+	"makerAssetAmount":"3878000000000000000",
+	"takerAssetAmount":"7172382700000000000000",
+	"makerAssetData":"0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	"takerAssetData":"0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+	"salt":"51751637292040195464275930348631023530521654536320229924174179190697444105549",
+	"exchangeAddress":"0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+	"feeRecipientAddress":"0x86003b044f70dac0abc80ac8957305b6370893ed",
+	"expirationTimeSeconds":"1627337932",
+	"makerFeeAssetData":"0x",
+	"chainId":1,
+	"takerFeeAssetData":"0x"
+}
+┌─────────┬─────────────┬──────────────────┬────────────────┬──────────────────────────┬───────────────────────────┬──────────────────────────┬─────────────────────────────┐
+│ (index) │ Profitable? │   Asset Order    │ Exchange Order │          Input           │          Output           │          Profit          │          Timestamp          │
+├─────────┼─────────────┼──────────────────┼────────────────┼──────────────────────────┼───────────────────────────┼──────────────────────────┼─────────────────────────────┤
+│    0    │    true     │ 'DAI, WETH, DAI' │ 'ZRX, 1Split'  │ '7172.3827             ' │ '7209.069157148151291806' │ '36.630357148150907    ' │ '2021-07-21T03:44:39-05:00' │
+└─────────┴─────────────┴──────────────────┴────────────────┴──────────────────────────┴───────────────────────────┴──────────────────────────┴─────────────────────────────┘
+

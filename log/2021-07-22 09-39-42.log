@@ -1,0 +1,167 @@
+Fetching market data @ 2021-07-22T04:39:45-05:00 ...
+
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+Order taker asset remaining: 18.383038282766248568
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+Order taker asset remaining: 131.586715500532939247
+Order taker asset remaining: 3411.532065033257890974
+Order has taker fees, payable in TAKER asset: DAI
+{
+	"signature":"0x1cfdaf7eefc366a7cd088e404dee260b11d2229db3670d3b2adc37f61a61bc293e767bcda3a046cc2689ea9d9ab976abf813abe3b396adeb45881f1984513fea1503",
+	"senderAddress":"0x0000000000000000000000000000000000000000",
+	"makerAddress":"0x4f0a296cbfa854be4b97df5c1f36f5140f6297e5",
+	"takerAddress":"0x0000000000000000000000000000000000000000",
+	"makerFee":"0",
+	"takerFee":"0",
+	"makerAssetAmount":"1780729503037534",
+	"takerAssetAmount":"3517826610350352038",
+	"makerAssetData":"0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	"takerAssetData":"0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+	"salt":"1626946772801",
+	"exchangeAddress":"0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+	"feeRecipientAddress":"0x0000000000000000000000000000000000000000",
+	"expirationTimeSeconds":"1626946802",
+	"makerFeeAssetData":"0x",
+	"chainId":1,
+	"takerFeeAssetData":"0x"
+}
+┌─────────┬─────────────┬──────────────────┬────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬─────────────────────────────┐
+│ (index) │ Profitable? │   Asset Order    │ Exchange Order │          Input           │          Output          │          Profit          │          Timestamp          │
+├─────────┼─────────────┼──────────────────┼────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼─────────────────────────────┤
+│    0    │    true     │ 'DAI, WETH, DAI' │ 'ZRX, 1Split'  │ '3.517826610350352038  ' │ '3.544745953860457497  ' │ '0.0213093435101056    ' │ '2021-07-22T04:39:46-05:00' │
+└─────────┴─────────────┴──────────────────┴────────────────┴──────────────────────────┴──────────────────────────┴──────────────────────────┴─────────────────────────────┘
+
+Order has taker fees, payable in TAKER asset: DAI
+{
+	"signature":"0x1b20fbe896a2975afae282de9bd8102100fbf81a94b66acc1d169fec9d864a77fc355bd961a0711f2185d152e8d22ee105a220767da39de3dd2fdb2e9f7ae04a1503",
+	"senderAddress":"0x0000000000000000000000000000000000000000",
+	"makerAddress":"0x13bb0ae230504a389989fd00df6dae9e2a873d5e",
+	"takerAddress":"0x0000000000000000000000000000000000000000",
+	"makerFee":"0",
+	"takerFee":"0",
+	"makerAssetAmount":"20811812339746748",
+	"takerAssetAmount":"41100222064056101532",
+	"makerAssetData":"0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	"takerAssetData":"0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+	"salt":"1626946770870",
+	"exchangeAddress":"0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+	"feeRecipientAddress":"0x0000000000000000000000000000000000000000",
+	"expirationTimeSeconds":"1626946800",
+	"makerFeeAssetData":"0x",
+	"chainId":1,
+	"takerFeeAssetData":"0x"
+}
+Order has taker fees, payable in TAKER asset: DAI
+{
+	"signature":"0x1bdb01b456fb541bd472ec6c52163a0e4472d41329e8f7eb4ce619655b036366a8665511910e55a5db04649442b9cc6ab5b6a506a46f1d4f567bca01c6ae04d59e03",
+	"senderAddress":"0x0000000000000000000000000000000000000000",
+	"makerAddress":"0x2845809b4ec0d747655a5f28077e804e186a903d",
+	"takerAddress":"0x0000000000000000000000000000000000000000",
+	"makerFee":"0",
+	"takerFee":"0",
+	"makerAssetAmount":"3878000000000000000",
+	"takerAssetAmount":"7172382700000000000000",
+	"makerAssetData":"0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	"takerAssetData":"0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+	"salt":"51751637292040195464275930348631023530521654536320229924174179190697444105549",
+	"exchangeAddress":"0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+	"feeRecipientAddress":"0x86003b044f70dac0abc80ac8957305b6370893ed",
+	"expirationTimeSeconds":"1627337932",
+	"makerFeeAssetData":"0x",
+	"chainId":1,
+	"takerFeeAssetData":"0x"
+}
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+SKIP order taker asset left less than 0.01
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order taker asset remaining: 0.028523639154488458
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: USDC
+Fetching market data @ 2021-07-22T04:39:48-05:00 ...
+
+{
+	"signature":"0x1b66ee2ea5e67f77274fcf7c15f17746b9a8f6ad4c94bf4e4ed6c1cdbad1c75b732aa617fd55b181bb684eb8f0ddc7af5fd620a6acc7f72987cd17a2c7d0c43fbb03",
+	"senderAddress":"0x0000000000000000000000000000000000000000",
+	"makerAddress":"0x4f0a296cbfa854be4b97df5c1f36f5140f6297e5",
+	"takerAddress":"0x0000000000000000000000000000000000000000",
+	"makerFee":"0",
+	"takerFee":"0",
+	"makerAssetAmount":"1780729503037534",
+	"takerAssetAmount":"3518414322773850147",
+	"makerAssetData":"0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	"takerAssetData":"0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+	"salt":"1626946788810",
+	"exchangeAddress":"0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+	"feeRecipientAddress":"0x0000000000000000000000000000000000000000",
+	"expirationTimeSeconds":"1626946818",
+	"makerFeeAssetData":"0x",
+	"chainId":1,
+	"takerFeeAssetData":"0x"
+}
+{
+	"signature":"0x1b32885c50faaab3e8c6c658a6c2a9de50addedfd7a9ed10078582e62387dd9f2d0dc2e8c8377ed7e3df132727d58182f4d32ea9e25fda0283610b3212a9b1ceba03",
+	"senderAddress":"0x0000000000000000000000000000000000000000",
+	"makerAddress":"0x13bb0ae230504a389989fd00df6dae9e2a873d5e",
+	"takerAddress":"0x0000000000000000000000000000000000000000",
+	"makerFee":"0",
+	"takerFee":"0",
+	"makerAssetAmount":"20811812339746748",
+	"takerAssetAmount":"41093976872413769799",
+	"makerAssetData":"0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	"takerAssetData":"0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+	"salt":"1626946787821",
+	"exchangeAddress":"0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+	"feeRecipientAddress":"0x0000000000000000000000000000000000000000",
+	"expirationTimeSeconds":"1626946817",
+	"makerFeeAssetData":"0x",
+	"chainId":1,
+	"takerFeeAssetData":"0x"
+}

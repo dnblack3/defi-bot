@@ -1,0 +1,86 @@
+Fetching market data @ 2021-07-20T12:07:38-05:00 ...
+
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+Order taker asset remaining: 131.586715500532939247
+Order taker asset remaining: 3411.532065033257890974
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+SKIP order taker asset left less than 0.01
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+Order has taker fees, payable in TAKER asset: USDC
+SKIP order taker asset left less than 0.01
+Order taker asset remaining: 0.028523639154488458
+{
+	"signature":"0x1c30a8dfb21975db1d056acf50000608b78cea4bbc59f383cf46dd32bba8d2923308b90b06f3a771e18b2b84528abf1d91398544e4735081f42df4bb1f7ad6c55202",
+	"senderAddress":"0x0000000000000000000000000000000000000000",
+	"makerAddress":"0x0ad59c344359fdf8472e7ffbf4eb6af4751138da",
+	"takerAddress":"0x0000000000000000000000000000000000000000",
+	"makerFee":"0",
+	"takerFee":"0",
+	"makerAssetAmount":"20000000000",
+	"takerAssetAmount":"11111111000000000000",
+	"makerAssetData":"0xf47261b0000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+	"takerAssetData":"0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	"salt":"14509172531136624549156018244338284346102296181526062418162652040385368616049",
+	"exchangeAddress":"0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+	"feeRecipientAddress":"0x86003b044f70dac0abc80ac8957305b6370893ed",
+	"expirationTimeSeconds":"1627023036",
+	"makerFeeAssetData":"0x",
+	"chainId":1,
+	"takerFeeAssetData":"0x"
+}
+┌─────────┬─────────────┬────────────────────┬────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬─────────────────────────────┐
+│ (index) │ Profitable? │    Asset Order     │ Exchange Order │          Input           │          Output          │          Profit          │          Timestamp          │
+├─────────┼─────────────┼────────────────────┼────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼─────────────────────────────┤
+│    0    │    true     │ 'WETH, USDC, WETH' │ 'ZRX, 1Split'  │ '11.111111             ' │ '11.182465287893847061 ' │ '0.015254287893848064  ' │ '2021-07-20T12:07:40-05:00' │
+└─────────┴─────────────┴────────────────────┴────────────────┴──────────────────────────┴──────────────────────────┴──────────────────────────┴─────────────────────────────┘
+

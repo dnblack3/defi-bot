@@ -1,0 +1,63 @@
+Fetching market data @ 2021-07-22T09:00:31-05:00 ...
+
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+Order taker asset remaining: 126.68818686982791077
+SKIP order taker asset left less than 0.01
+SKIP order taker asset left less than 0.01
+Order taker asset remaining: 131.586715500532939247
+Order taker asset remaining: 3411.532065033257890974
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+{
+	"signature":"0x1c63a37c898af53e8d4cd87e548df7107530995053893db8013116b7fca34665165533879ef68e62a8cd53fd309da2a98fb9e8833560150d28e5d24383b5ec25b102",
+	"senderAddress":"0x0000000000000000000000000000000000000000",
+	"makerAddress":"0x5f0dc4d8885c4018cc66bb2959f901a0a3da790e",
+	"takerAddress":"0x0000000000000000000000000000000000000000",
+	"makerFee":"0",
+	"takerFee":"0",
+	"makerAssetAmount":"121900000000000000",
+	"takerAssetAmount":"241131900000000000000",
+	"makerAssetData":"0xf47261b0000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+	"takerAssetData":"0xf47261b00000000000000000000000006b175474e89094c44da98b954eedeac495271d0f",
+	"salt":"18633776328148792942398711980961504372498002086752312944204631031708067151325",
+	"exchangeAddress":"0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+	"feeRecipientAddress":"0x86003b044f70dac0abc80ac8957305b6370893ed",
+	"expirationTimeSeconds":"1627040322",
+	"makerFeeAssetData":"0x",
+	"chainId":1,
+	"takerFeeAssetData":"0x"
+}
+┌─────────┬─────────────┬──────────────────┬────────────────┬──────────────────────────┬──────────────────────────┬──────────────────────────┬─────────────────────────────┐
+│ (index) │ Profitable? │   Asset Order    │ Exchange Order │          Input           │          Output          │          Profit          │          Timestamp          │
+├─────────┼─────────────┼──────────────────┼────────────────┼──────────────────────────┼──────────────────────────┼──────────────────────────┼─────────────────────────────┤
+│    0    │    true     │ 'DAI, WETH, DAI' │ 'ZRX, 1Split'  │ '241.1319              ' │ '242.994556483611214933' │ '1.7801564836112138    ' │ '2021-07-22T09:00:32-05:00' │
+└─────────┴─────────────┴──────────────────┴────────────────┴──────────────────────────┴──────────────────────────┴──────────────────────────┴─────────────────────────────┘
+
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: WETH
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Order has taker fees, payable in TAKER asset: DAI
+Error: Returned error: insufficient funds for gas * price + value

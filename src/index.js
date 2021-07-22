@@ -1,8 +1,10 @@
 require('dotenv').config()
 require('console.table')
+const stream = require('stream')
 const express = require('express')
 const path = require('path')
-const player = require('play-sound')(opts = {})
+const fs = require('fs')
+const player = require('sound-play')
 const http = require('http')
 const cors = require('cors')
 const Web3 = require('web3')
@@ -10,6 +12,54 @@ const axios = require('axios')
 const moment = require('moment-timezone')
 const numeral = require('numeral')
 const _ = require('lodash')
+const { Console } = require('console')
+
+var dateFormat = require('dateformat')
+const { ECHILD } = require('constants')
+const { exit } = require('process')
+
+var ts = new stream.Transform({transform(chunk, enc, cb) {cb(null, chunk)}})
+const logger = new Console({stdout: ts})
+
+// Console Table
+const getTable = (data) => {
+  logger.table(data)
+  return (ts.read() || '').toString()
+}
+
+mEscape = (str) => {
+  return str
+    .replaceAll('{', '{\n\t')
+    .replaceAll(',', ',\n\t')
+    .replaceAll('}', '\n}')
+};
+
+// Log File
+const curDateTime = dateFormat(new Date(), 'yyyy-mm-dd hh-MM-ss')
+const FILE_NAME = curDateTime + '.log'
+const LOG_DIR = 'log'
+
+// Log Function
+
+const makeLogDir = () => {
+    try {
+        
+        if (!fs.existsSync(LOG_DIR)) {
+            fs.mkdirSync(LOG_DIR)
+        }
+    } catch (err) {
+    }
+}
+
+const logFile = (content) => {
+    try {
+        fs.appendFileSync(LOG_DIR + '/' + FILE_NAME, content.toString() + '\n')
+  } catch (err) {}
+  
+}
+
+makeLogDir();
+
 
 // SERVER CONFIG
 const PORT = process.env.PORT || 5000
@@ -19,8 +69,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(cors({credentials: true, origin: '*'}))
 
 // WEB3 CONFIG
-const web3 = new Web3(process.env.RPC_URL)
+// const web3 = new Web3(process.env.RPC_URL)
+// web3.eth.accounts.wallet.add(process.env.PRIVATE_KEY)
+const web3 = new Web3(new Web3.providers.HttpProvider(process.env.RPC_URL))
 web3.eth.accounts.wallet.add(process.env.PRIVATE_KEY)
+
 
 // SMART CONTRACTS
 // https://github.com/CryptoManiacsZone/1inchProtocol/blob/master/contracts/OneSplitAudit.sol
@@ -88,11 +141,9 @@ const now = () => (moment().tz('America/Chicago').format())
 
 const SOUND_FILE = 'ding.mp3'
 const playSound = () => {
-  player.play(SOUND_FILE, function(err){
-    if(err) {
-      console.log("Error playing sound!")
-    }
-  })
+  const path = require("path");
+  const filePath = path.join(__dirname, '/..', SOUND_FILE);
+  player.play(filePath);
 }
 
 
@@ -148,7 +199,9 @@ async function checkArb(args) {
   // Skip if Maker Fee
   // TODO does this even make sense? The bot is always going to be the taker, plus I haven't yet seen any maker fee on 0x other than 0 
   if(zrxOrder.makerFee.toString() !== '0') {
-    console.log('Order has maker fee')
+    log = 'Order has maker fee'
+    console.log(log)
+    logFile(log)
     return
   }
 
@@ -190,12 +243,16 @@ async function checkArb(args) {
   if(amountLeft != zrxOrder.takerAssetAmount){
   	amountLeft = web3.utils.fromWei(metadata.remainingFillableTakerAssetAmount, 'ether') // typeof = string
   	if(amountLeft<0.01){
-  		console.log('SKIP order taker asset left less than 0.01')
+        log = 'SKIP order taker asset left less than 0.01'
+  		console.log(log)
+        logFile(log)
   		return
   	}
   	// TODO inputamount needs to equal amountleft
   	// I'm HERE <<<=========
-  	console.log('Order taker asset remaining: ' + amountLeft)
+    log = 'Order taker asset remaining: ' + amountLeft
+  	console.log(log)
+    logFile(log)
   }
 
   // Fetch 1Split Data
@@ -218,19 +275,25 @@ async function checkArb(args) {
   	// TODO make the net profit calculation look cleaner by assigning the results of if statements to constants
   	// e.g. the below line should look like: if(takerFeeAsset == ASSET_ADDRESSES[assetOrder[0])
     if ('0x'+zrxOrder.takerFeeAssetData.substring(34,74) == ASSET_ADDRESSES[assetOrder[0]]) {
-    	console.log("Order has taker fees, payable in TAKER asset: " + assetOrder[0])
+        log = "Order has taker fees, payable in TAKER asset: " + assetOrder[0];
+    	console.log(log)
+        logFile(log)
     	// subtracting fee from net profit calculation
   		// the fee currency is usually the taker asset, i.e. it is the same currency as the other amounts in the netProfit calculation and can be subtracted as is
   		// however additional logic is needed to handle cases where the taker fee is in the maker currency, which would require converting the amount to the taker currency amount before subtracting it
     	netProfit = outputAssetAmount - inputAssetAmount - estimatedGasFee - zrxOrder.takerFee
     } else if ('0x'+zrxOrder.takerFeeAssetData.substring(34,74) == ASSET_ADDRESSES[assetOrder[1]]) {
     	// could just be just an 'else', but better being explicit
-    	console.log("Order has taker fees, payable in MAKER asset: " + assetOrder[1])
+        log = "Order has taker fees, payable in MAKER asset: " + assetOrder[1]
+    	console.log(log)
+        logFile(log)
     	return // TODO remove this and account for change of asset in net profit calculation
     } else {
     	// this should never be the case, but better be safe.
     	// I.e. it is neither 0x nor taker or maker asset address
-    	console.log("takerFeeAssetData not recognized: " + zrxOrder.takerFeeAssetData)
+        log = "takerFeeAssetData not recognized: " + zrxOrder.takerFeeAssetData
+    	console.log(log)
+        logFile(log)
     	return
     }
 
@@ -247,7 +310,11 @@ async function checkArb(args) {
 
   // If profitable, then stop looking and trade!
   if(profitable) {
+    
   	console.log(zrxOrder)
+    log = JSON.stringify(zrxOrder)
+    log =  mEscape(log)
+    logFile(log)
     // Skip if another profitable arb has already been found
     // TODO remove this check, this value will be set to true never not back to false, meaning the bot will stop after the first arb
     // doesnt even make much sense since if this is always true, the interval will always clear, why return here after the bot has already done many api calls...
@@ -259,7 +326,7 @@ async function checkArb(args) {
     profitableArbFound = true
 
     // Log the arb
-    console.table([{
+    log = [{
       'Profitable?': profitable,
       'Asset Order': assetOrder.join(', '),
       'Exchange Order': 'ZRX, 1Split',
@@ -267,13 +334,17 @@ async function checkArb(args) {
       'Output': displayTokens(outputAssetAmount, assetOrder[0]).padEnd(22, ' '),
       'Profit': displayTokens(netProfit.toString(), assetOrder[0]).padEnd(22, ' '),
       'Timestamp': now(),
-    }])
+    }]
+
+    
+    console.table(log)
+    logFile(getTable(log))
 
     // Play alert tone
     playSound()
 
     // Call arb contract
-    // await trade(assetOrder[0], ASSET_ADDRESSES[assetOrder[0]], ASSET_ADDRESSES[assetOrder[1]], zrxOrder, inputAssetAmount, oneSplitData)
+    await trade(assetOrder[0], ASSET_ADDRESSES[assetOrder[0]], ASSET_ADDRESSES[assetOrder[1]], zrxOrder, inputAssetAmount, oneSplitData)
   	/*
   		TODO don't just settle for greater than 0 and then stop, rather finish going through all 0x orders and then chose the most profitable one to begin with!
 			TODO even better, rather than going through them sequentially like an idiot, why not sort the orders by the best exchange rate first!?!?!?!
@@ -324,20 +395,30 @@ async function trade(flashTokenSymbol, flashTokenAddress, arbTokenAddress, order
   // Calculate slippage
   const minReturnWtihSplippage = minReturnWithSlippage = (new web3.utils.BN(minReturn)).mul(new web3.utils.BN('995')).div(new web3.utils.BN('1000')).toString()
 
-  // Perform Trade
-  receipt = await traderContract.methods.getFlashloan(
-    flashTokenAddress, // address flashToken,
-    FLASH_AMOUNT, // uint256 flashAmount, 
-    arbTokenAddress, // address arbToken,
-    data, // bytes calldata zrxData,
-    minReturnWtihSplippage.toString(), // uint256 oneSplitMinReturn,
-    distribution, // uint256[] calldata oneSplitDistribution
-  ).send({
-    from: process.env.ADDRESS,
-    gas: process.env.GAS_LIMIT,
-    gasPrice: web3.utils.toWei(process.env.GAS_PRICE, 'Gwei')
-  })
-  console.log(receipt)
+  
+  try {
+    // Perform Trade
+    receipt = await traderContract.methods.getFlashloan(
+      flashTokenAddress, // address flashToken,
+      FLASH_AMOUNT, // uint256 flashAmount, 
+      arbTokenAddress, // address arbToken,
+      data, // bytes calldata zrxData,
+      minReturnWtihSplippage.toString(), // uint256 oneSplitMinReturn,
+      distribution, // uint256[] calldata oneSplitDistribution
+    )
+    .send({
+      from: process.env.ADDRESS,
+      gas: process.env.GAS_LIMIT,
+      gasPrice: web3.utils.toWei(process.env.GAS_PRICE, 'Gwei')
+    })
+    console.log(receipt)
+    logFile(receipt.toString())
+  } catch (error) {
+    console.error(error)
+    logFile(error)
+    exit();
+  }
+  
 }
 
 // FETCH ORDERBOOK
@@ -352,6 +433,7 @@ async function checkOrderBook(baseAssetSymbol, quoteAssetSymbol) {
   const zrxData = zrxResponse.data
 
   const bids = zrxData.bids.records
+
   bids.map((o) => {
     checkArb({ zrxOrder: o.order,
     metadata: o.metaData,
@@ -376,11 +458,14 @@ async function checkMarkets() {
 
   // Stop checking markets if already found
   // TODO remove this
-  if(profitableArbFound) {
-    clearInterval(marketChecker)
-  }
+    if (profitableArbFound) {
+        clearInterval(marketChecker)
+    }
 
-  console.log(`Fetching market data @ ${now()} ...\n`)
+  var log = `Fetching market data @ ${now()} ...\n`
+  console.log(log)
+  logFile(log)
+
   checkingMarkets = true
   try {
     await checkOrderBook(WETH, DAI)
@@ -391,6 +476,7 @@ async function checkMarkets() {
     await checkOrderBook(WETH, USDC)
   } catch (error) {
     console.error(error)
+    logFile(error)
     checkingMarkets = false
     return
   }
